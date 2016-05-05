@@ -1,0 +1,91 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:2:1-41:12
+	xmlns:android
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:3:5-63
+	package
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:2:11-51
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:6:2-63
+MERGED from [ADF_HotPatching_App:library:unspecified] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/ADF_HotPatching_App/library/unspecified/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:6:19-61
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:8:2-77
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:8:19-75
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:9:2-75
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:9:19-73
+application
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:11:2-39:16
+MERGED from [com.android.support:support-v4:21.0.3] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:appcompat-v7:21.0.3] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:support-v4:21.0.3] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:16:5-19
+	android:label
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:14:3-35
+	android:allowBackup
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:12:3-29
+	android:icon
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:13:3-39
+	android:theme
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:15:3-34
+activity#com.loveplusplus.update.sample.MainActivity
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:16:3-24:14
+	android:label
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:18:4-36
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:17:4-32
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:19:4-23:20
+action#android.intent.action.MAIN
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:20:5-56
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:20:13-54
+category#android.intent.category.LAUNCHER
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:22:5-64
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:22:15-62
+activity#com.loveplusplus.update.sample.ShowPackage_activity
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:25:3-51
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:25:13-49
+service#com.loveplusplus.update.DownloadService
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:27:3-29:29
+	android:exported
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:29:4-27
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:28:4-58
+activity#com.loveplusplus.update.sample.Hot_Patching
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:31:3-34:14
+	android:label
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:33:4-56
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:32:4-32
+activity#com.loveplusplus.update.sample.ExitActivity
+ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:35:3-38:14
+	android:label
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:37:4-47
+	android:name
+		ADDED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml:36:4-32
+uses-sdk
+INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [ADF_HotPatching_App:library:unspecified] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/ADF_HotPatching_App/library/unspecified/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:21.0.3] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:appcompat-v7:21.0.3] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:support-v4:21.0.3] /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/AndroidManifest.xml:15:5-42
+	android:targetSdkVersion
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
+		INJECTED from /media/max-fzf/TianCaiFZF/ADF_HotPatching_App/sample/src/main/AndroidManifest.xml
