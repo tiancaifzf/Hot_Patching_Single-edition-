@@ -12,6 +12,11 @@ import android.os.Handler;
 
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.loveplusplus.update.UpdateChecker;
 
 import org.json.JSONException;
@@ -35,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements MyResultReceiver.
     private static Context mContext ;
     OutputStream localOutputStream = null;
     public static final String KEY="com.example.max_fzf.root_test";
-    protected static final String APP_UPDATE_SERVER_URL = "http://140.112.29.195:3333/update_check";
+    protected static final String APP_UPDATE_SERVER_URL = "http://140.112.29.194:3333/update_check";
     public static MyResultReceiver mReceiver;
     private int local_version;
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
@@ -44,6 +49,7 @@ public class MainActivity extends ActionBarActivity implements MyResultReceiver.
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppManager.getAppManager().addActivity(this);
         mContext=this.getApplicationContext();
         mReceiver = new MyResultReceiver(new Handler());
         mReceiver.setReceiver(this);
@@ -88,6 +94,51 @@ public class MainActivity extends ActionBarActivity implements MyResultReceiver.
             builder.show();
         }
         File version_json=new File("sdcard/Android/data/com.loveplusplus.update.sample/cache/Patching_version.json");
+        Button broken= (Button) findViewById(R.id.button);
+        final TextView sfff= (TextView) findViewById(R.id.textView);
+        broken.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Error_test();
+            sfff.setText("Successful!!!!");
+            }
+        });
+        Button clean= (Button) findViewById(R.id.button2);
+        clean.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                localProcess = Runtime.getRuntime().exec("su");
+                localOutputStream = localProcess.getOutputStream();
+                DataOutputStream localDataOutputStream = new DataOutputStream(localOutputStream);
+                localDataOutputStream.writeBytes("mount -o remount,rw /system\n");
+                localDataOutputStream.writeBytes("rm -r /system/df_file\n");
+                    localDataOutputStream.writeBytes("rm -r /system/dynamic_framework/hook.apk\n");
+                    localDataOutputStream.writeBytes("rm -r /sdcard/Android/data/com.loveplusplus.update.sample/cache/Patching_version.json\n");
+                    Toast.makeText(getApplicationContext(),"Reset successful!",Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        Button reboot= (Button) findViewById(R.id.button3);
+        reboot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                localProcess = Runtime.getRuntime().exec("su");
+                localOutputStream = localProcess.getOutputStream();
+                DataOutputStream localDataOutputStream = new DataOutputStream(localOutputStream);
+                    localDataOutputStream.writeBytes("reboot\n");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+    public void Error_test(){
+        int a;
+        a=6/0;
     }
     @Override
     public void onReceiveResult(int resultCode, Bundle resultData) {
@@ -108,27 +159,46 @@ public class MainActivity extends ActionBarActivity implements MyResultReceiver.
             localDataOutputStream.writeBytes("rm -r /system/df_file\n");
             localDataOutputStream.writeBytes("rm -r /system/dynamic_framework/hook.apk\n");
             localDataOutputStream.writeBytes("rm -r sdcard/Android/data/com.loveplusplus.update.sample/cache/hook.zip\n");
-
             localDataOutputStream.writeBytes("mv sdcard/Android/data/com.loveplusplus.update.sample/cache/hook.apk /system/dynamic_framework/hook.apk\n");
             localDataOutputStream.writeBytes("mv sdcard/Android/data/com.loveplusplus.update.sample/cache/df_file /system/df_file\n");
             localDataOutputStream.writeBytes("mount -o remount,ro /system\n");
-            File df_file=new File("/system/df_file");
-            File hook_apk=new File("/system/dynamic_framework/hook.apk");
+            File df_file;
+            File hook_apk;
+            Log.d("注意！！","來到了判斷之前");
+          do{
+              df_file=new File("/system/df_file");
+              hook_apk=new File("/system/dynamic_framework/hook.apk");
+              Log.d("注意！！","不存在！");
+          } while(df_file.exists()==false||hook_apk.exists()==false);
+            df_file=new File("/system/df_file");
+            hook_apk=new File("/system/dynamic_framework/hook.apk");
             if(df_file.exists()&&hook_apk.exists()){
+                Log.d("注意！！","df_file 和 apk 都存在！");
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
                 builder.setIcon(R.drawable.ic_launcher);
                 builder.setTitle("ADF Message");
                 builder.setMessage("Hot_Patching Successful !!");
                 builder.setPositiveButton("Exit",new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent exit=new Intent(MainActivity.this,ExitActivity.class);
-                        startActivity(exit);
+                       // Intent exit=new Intent(MainActivity.this,ExitActivity.class);
+                      //  startActivity(exit);
+                      //  finish();
+                       // int pid=android.os.Process.myPid();
+                       // AppManager.getAppManager().AppExit(mContext);
+                        int pid=android.os.Process.myPid();
+                        android.os.Process.killProcess(pid);
                         finish();
                     }
                 });
                 builder.show();
+            }
+            else{
+                Log.d("注意！！","df_file 和 apk 消失了！！");
+            }
+
+            if(df_file.exists()&&hook_apk.exists()){
+                Toast.makeText(getApplicationContext(),"ADF",Toast.LENGTH_SHORT).show();
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -10,5 +10,40 @@
     tools:context="com.example.max_fzf.root_test.MainActivity">
 
 
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="TRY ME"
+		android:id="@+id/button"
+		android:textSize="80sp"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="84dp"/>
 
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:id="@+id/textView"
+		android:layout_below="@+id/button"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="39dp"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Clean"
+		android:id="@+id/button2"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"/>
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Reboot"
+		android:id="@+id/button3"
+		android:layout_alignParentBottom="true"
+		android:layout_toLeftOf="@+id/button2"
+		android:layout_toStartOf="@+id/button2"/>
 </RelativeLayout>
