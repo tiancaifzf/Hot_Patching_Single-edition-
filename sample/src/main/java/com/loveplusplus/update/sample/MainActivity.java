@@ -114,6 +114,8 @@ public class MainActivity extends ActionBarActivity implements MyResultReceiver.
                 localDataOutputStream.writeBytes("mount -o remount,rw /system\n");
                 localDataOutputStream.writeBytes("rm -r /system/df_file\n");
                     localDataOutputStream.writeBytes("rm -r /system/dynamic_framework/hook.apk\n");
+                   // localDataOutputStream.writeBytes("rm -r /sdcard/Android/data/com.loveplusplus.update.sample/cache/df_file\n");
+                    localDataOutputStream.writeBytes("rm -r /sdcard/Android/data/com.loveplusplus.update.sample/cache/hook/\n");
                     localDataOutputStream.writeBytes("rm -r /sdcard/Android/data/com.loveplusplus.update.sample/cache/Patching_version.json\n");
                     Toast.makeText(getApplicationContext(),"Reset successful!",Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
@@ -168,7 +170,6 @@ public class MainActivity extends ActionBarActivity implements MyResultReceiver.
           do{
               df_file=new File("/system/df_file");
               hook_apk=new File("/system/dynamic_framework/hook.apk");
-              Log.d("注意！！","不存在！");
           } while(df_file.exists()==false||hook_apk.exists()==false);
             df_file=new File("/system/df_file");
             hook_apk=new File("/system/dynamic_framework/hook.apk");
